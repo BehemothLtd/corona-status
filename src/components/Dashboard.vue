@@ -22,6 +22,8 @@ export default {
   },
   created: async function() {
     await this.fetchData();
+
+    console.log(this.countryBaseData.map(c => c.Country_Region));
   },
   methods: {
     fetchData: async function() {
