@@ -44,7 +44,7 @@ export default {
     };
   },
   created: function() {
-    this.countryImg = getCountryImg(this.countryData.Country_Region);
+    this.countryImg = getCountryImg();
   }
 };
 </script>
