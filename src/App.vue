@@ -16,6 +16,17 @@ export default {
 </script>
 
 <style lang="scss">
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-item {
+  width: 300px;
+  padding: 20px 10px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,20 +36,17 @@ export default {
   margin-top: 60px;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
 
 $border-radius-size: 14px;
-$barbarian: #ec9b3b;
-$archer: #ee5487;
-$giant: #f6901a;
-$goblin: #82bb30;
-$wizard: #4facff;
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
+
+$color: #71a32a;
 
 body {
   background: linear-gradient(
@@ -48,34 +56,16 @@ body {
       rgba(175, 135, 124, 1) 100%
     )
     fixed;
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg")
-    no-repeat center center fixed;
   background-size: cover;
   font: 14px/20px "Lato", Arial, sans-serif;
   color: #9e9e9e;
   margin-top: 30px;
 }
 
-.slide-container {
-  margin: auto;
-  width: 600px;
-  text-align: center;
-}
-
-.wrapper {
-  padding-top: 40px;
-  padding-bottom: 40px;
-
-  &:focus {
-    outline: 0;
-  }
-}
-
 .clash-card {
   background: white;
-  width: 300px;
+  width: 100%;
   display: inline-block;
-  margin: auto;
   border-radius: $border-radius-size + 5;
   position: relative;
   text-align: center;
@@ -91,53 +81,14 @@ body {
   border-top-right-radius: $border-radius-size;
 }
 
-.clash-card__image--barbarian {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg");
-  img {
-    width: 400px;
-    position: absolute;
-    top: -65px;
-    left: -70px;
-  }
-}
-
 .clash-card__image--archer {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg");
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg');
   img {
-    width: 400px;
+    height: 300px;
     position: absolute;
     top: -34px;
-    left: -37px;
-  }
-}
-
-.clash-card__image--giant {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg");
-  img {
-    width: 340px;
-    position: absolute;
-    top: -30px;
-    left: -25px;
-  }
-}
-
-.clash-card__image--goblin {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg");
-  img {
-    width: 370px;
-    position: absolute;
-    top: -21px;
-    left: -37px;
-  }
-}
-
-.clash-card__image--wizard {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg");
-  img {
-    width: 345px;
-    position: absolute;
-    top: -28px;
-    left: -10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -148,24 +99,8 @@ body {
   margin-bottom: 3px;
 }
 
-.clash-card__level--barbarian {
-  color: $barbarian;
-}
-
 .clash-card__level--archer {
-  color: $archer;
-}
-
-.clash-card__level--giant {
-  color: $giant;
-}
-
-.clash-card__level--goblin {
-  color: $goblin;
-}
-
-.clash-card__level--wizard {
-  color: $wizard;
+  color: $color;
 }
 
 .clash-card__unit-name {
@@ -180,43 +115,11 @@ body {
   margin-bottom: 10px;
 }
 
-.clash-card__unit-stats--barbarian {
-  background: $barbarian;
-
-  .one-third {
-    border-right: 1px solid #bd7c2f;
-  }
-}
-
 .clash-card__unit-stats--archer {
-  background: $archer;
+  background: $color;
 
   .one-third {
-    border-right: 1px solid #d04976;
-  }
-}
-
-.clash-card__unit-stats--giant {
-  background: $giant;
-
-  .one-third {
-    border-right: 1px solid darken($giant, 8%);
-  }
-}
-
-.clash-card__unit-stats--goblin {
-  background: $goblin;
-
-  .one-third {
-    border-right: 1px solid darken($goblin, 6%);
-  }
-}
-
-.clash-card__unit-stats--wizard {
-  background: $wizard;
-
-  .one-third {
-    border-right: 1px solid darken($wizard, 6%);
+    border-right: 1px solid darken($color, 8%);
   }
 }
 
@@ -225,11 +128,15 @@ body {
   font-weight: 700;
   border-bottom-left-radius: $border-radius-size;
   border-bottom-right-radius: $border-radius-size;
+  display: flex;
 
   .one-third {
-    width: 33%;
-    float: left;
+    width: 33.33%;
     padding: 20px 15px;
+
+    &:last-child {
+      border: none;
+    }
   }
 
   sup {

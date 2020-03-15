@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card-list">
     <DashboardCountryStatus
       v-for="countryDatum in countryData"
       :key="countryDatum.OBJECTID"
@@ -23,6 +23,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>
