@@ -6,7 +6,9 @@
       </div>
       <div class="clash-card__level clash-card__level--archer"></div>
       <div class="clash-card__unit-name">{{ countryData.Country_Region }}</div>
-      <div class="clash-card__unit-description">{{ countryData.Confirmed }} Cases</div>
+      <div class="clash-card__unit-description">
+        <dd>{{ countryData.Confirmed }}</dd>Cases
+      </div>
 
       <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
         <div class="one-third">

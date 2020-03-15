@@ -82,7 +82,7 @@ body {
 }
 
 .clash-card__image--archer {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg');
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg");
   img {
     height: 300px;
     position: absolute;
@@ -111,8 +111,15 @@ body {
 }
 
 .clash-card__unit-description {
-  padding: 20px;
+  padding: 20px 0;
   margin-bottom: 10px;
+  font-weight: bold;
+
+  dd {
+    margin: 0;
+    color: red;
+    font-size: 20px;
+  }
 }
 
 .clash-card__unit-stats--archer {
